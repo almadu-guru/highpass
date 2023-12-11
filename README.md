@@ -1,6 +1,6 @@
 # High-pass
 Верстка одностраничного сайта фотостудии High-pass с анонсами мастерклассов и датами презентаций проектов, презентацией работ участников.
-https://almadu-guru.github.io/highpass/
+https://almadu-guru.github.io/highpass/src/
 
 ### Технологии:
 - Методология БЭМ
