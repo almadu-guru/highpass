@@ -1,0 +1,78 @@
+@import "./fonts"
+@import "./variables"
+@import "./mixins"
+
+html 
+	box-sizing: border-box
+
+
+*,
+*::before,
+*::after 
+	box-sizing: inherit
+
+
+a 
+	color: inherit
+	text-decoration: none
+
+
+img 
+	max-width: 100%
+
+
+body 
+	min-width: 320px
+	@include roboto-400
+	font-size: 16px
+	background: $light
+
+
+h1, h2, h3, h4, p, ul 
+	margin: 0
+
+.list-reset 
+	margin: 0
+	padding: 0
+	outline: 0
+	list-style: none
+
+	
+.display-none 
+	display: none
+
+
+.btn-reset 
+	padding: 0
+	outline: 0
+	border: none
+	background-color: transparent
+	cursor: pointer
+
+.btn     
+	padding: 12px 16px	
+	@include roboto-700
+	font-size: 16px
+	line-height: 19px
+	color: $light
+	background: $color-btn
+
+
+.btn-prim     
+	padding: 15px 22px    
+
+
+.btn-secondary	
+	padding: 13px 20px
+	@include roboto-700
+	color: $light
+	background-color: inherit
+	border: 3px solid $color-btn
+
+
+.flex 
+	display: flex
+
+
+.grid
+	display: grid

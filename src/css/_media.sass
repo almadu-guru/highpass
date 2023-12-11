@@ -1,0 +1,571 @@
+/* 1280px - 3840px */
+@media screen and (max-width: 1770px) 
+
+    
+/* 1024px - 1279px */
+@media screen and (max-width: 1279px) 
+    .container 
+        max-width: 963px
+
+    .header 
+        &__container 
+            padding: 25px 0
+        
+        &__logo 
+            margin-right: 84px                    
+    
+    .nav__item 
+        margin-right: 33px
+
+    .hero        
+        padding: 34px 0 60px 0
+        &__title
+            font-size: 34px
+        
+        &__descr 
+            margin-bottom: 9px    
+
+        &_container
+            grid-template-rows: minmax(405px, auto)
+            grid-auto-rows: minmax(186px, auto)
+
+    .block
+        padding: 0 30px 40px 30px
+        
+        &__titel, &__date               
+            font-size: 34px
+           
+    .left__span    
+        left: 328px
+    
+    .about
+        padding-bottom: 12px
+
+    .form
+        &__wrapp
+            flex-direction: column
+            align-items: flex-start
+
+        &__input
+            margin-bottom: 20px
+            width: 343px
+
+    .projects 
+        &__list 
+            grid-template-columns: repeat(24, 1fr)
+            grid-template-rows: 285px
+            grid-auto-rows: minmax(307px, auto)
+            gap: 24px
+                
+        &__item 
+            grid-column: span 6
+        
+        &__item:nth-child(3) 
+            grid-column: span 12
+        
+        & .item-big 
+            grid-column: span 15
+        
+        & .item-medium 
+            grid-column: span 9
+        
+        &__article-title 
+            -webkit-line-clamp: 2
+        
+        & .item-medium &__article-title 
+            -webkit-line-clamp: 3
+        
+        &__article-big 
+            padding: 29px 308px 33px 30px
+
+        .project-photo-1
+            background-image: url(../resorces/img/project_semantics_1024.jpg)
+
+        .project-photo-2
+            background-image: url(../resorces/img/project_oblivion_1024.jpg)
+
+        &__hashtag             
+            right: 11px
+
+    section.projects > div > ul > li:nth-child(5) 
+        order: 1
+    
+    .contacts 
+        padding-bottom: 66px
+        &__wrapp 
+            display: grid
+            grid-template-columns: repeat(24, 1fr)
+            grid-auto-flow: row
+            gap: 30px
+        
+        &__map-wrapper             
+            grid-column: span 15            
+        
+        &__form 
+            grid-column: span 9
+        
+        &__address 
+            // position: relative
+            top: 306px                                 
+            padding: 26px 81px 21px 30px
+            width: 100%
+            min-height: 25% 
+
+        &__title-address
+            display: inline
+
+        &__location 
+            display: inline-block            
+            max-width: 273px 
+            font-style: normal
+            line-height: 29px           
+        
+        &__tel 
+            display: inline-flex
+            margin-left: -151px
+    
+    .footer 
+        &__logo-wrapper 
+            margin-right: 137px
+        
+        &__descr 
+            margin-right: 68px
+        
+
+
+/* 768px - 1023px */
+@media screen and (max-width: 1023px) 
+    .container 
+        max-width: 714px
+    
+    .header 
+        position: relative
+        &__container 
+            flex-wrap: wrap                        
+            padding: 26px 0
+            padding-bottom: 0
+
+        &__wrapp
+            flex-wrap: wrap
+        
+        &__nav
+            // margin-top: 37px 
+            width: 100%
+        
+        &__logo 
+            margin-bottom: 37px
+        
+        &__search-wrapper 
+            top: 26px
+            right: 0
+            transform: translate(0, 0)
+        
+        &::after 
+            content: ""
+            position: absolute
+            background-color: $default-3
+            left: 0
+            right: 0
+            bottom: 0
+            top: 80px       
+    
+    .nav 
+        z-index: 2
+        &__list 
+            width: 100%
+            justify-content: space-between
+            flex-wrap: wrap
+        
+        &__item 
+            margin: 0 
+            margin-right: 11px           
+            margin-bottom: 11px
+
+    .hero    
+        &__container 
+            grid-template-rows: minmax(289px, auto)
+            grid-auto-rows: minmax(133px, auto)
+
+        &__img 
+            height: 133px        
+        
+        &__subtitle 
+            font-size: 22px
+
+    .left__span 
+        left: 203px
+    
+    .block 
+        padding: 0 
+        padding-bottom: 29px
+        padding-left: 27px 
+        max-width: 277px
+        min-height: 452px
+
+        &__titel, &__date                                  
+            font-size: 33px
+
+        &__titel
+            margin-bottom: -4px   
+
+        &__span
+            margin-bottom: 14px 
+    
+    .about 
+        padding-bottom: 0
+
+    .projects 
+        padding-bottom: 71px
+        &__list 
+            grid-template-rows: 300px
+            grid-auto-rows: minmax(303px, auto)
+        
+        &__item 
+            grid-column: span 8
+        
+        &__item:nth-child(3) 
+            grid-column: span 8        
+        
+        
+        & .item-big 
+            grid-column: span 24
+        
+        & .item-medium 
+            grid-column: span 12        
+        
+        &__article-big 
+            padding: 40px 0 33px 30px
+
+        .project-photo-1
+            background-image: url(../resorces/img/project_semantics_768.jpg)
+
+        .project-photo-2
+            background-image: url(../resorces/img/project_oblivion_768.jpg)
+
+    .contacts 
+        padding-bottom: 55px
+        &__grid 
+            gap: 25px
+        
+        &__map-wrapper 
+            grid-column: span 24
+        
+        &__address 
+            padding: 30px 232px 21px 30px
+            width: 100%
+            min-height: 0 
+
+        .contacts__location   
+            max-width: 428px
+
+        .contacts__tel     
+            margin-left: -26px
+
+        &__form 
+            grid-column: span 17
+            max-width: 466px
+        
+        &__form-title 
+            margin-bottom: 7px        
+    
+    .footer__descr 
+        display: none
+    
+    .footer__container 
+        justify-content: space-between 
+
+
+    
+
+/* 320px - 767px */
+@media screen and (max-width: 767px)
+    .container 
+        max-width: 278px
+
+    .btn-prim, 
+    .btn-secondary 
+        padding: 12px 22px !important
+        font-size: 14px !important
+        line-height: 16px !important
+    
+    .hashtag
+        top: 4px
+        right: 4px
+        font-size: 12px
+        line-height: 14px
+    
+    .subtitle 
+        font-size: 18px
+        line-height: 23px
+    
+    .header    
+        &::after 
+            top: 70px
+           
+        &__logo 
+            margin-bottom: 21px 
+
+        &__search-input
+            width: 278px 
+            font-size: 14px    
+    
+    .search svg 
+        width: 20px
+        height: 20px
+    
+    .burger  
+        display: flex      
+        flex-direction: column
+        align-items: flex-start
+        justify-content: space-between 
+        margin-top: 10px
+        // z-index: 2
+        height: 18px
+        width: 20px        
+        
+        span 
+            background-color: $light
+            width: 100%
+            height: 2px
+        
+        span:last-child 
+            width: 50%
+
+    .nav 
+        padding-top: 7px
+        padding-bottom: 13px
+        &__list 
+            display: flex
+            flex-direction: column
+            padding: 85px 20px 60px 20px !important
+            align-items: flex-start
+            justify-content: stretch
+            background-color: $dark
+            top: 0
+            left: -101vw
+            position: fixed
+            width: 100vw
+            height: 100vh
+            transform: translateX(0)
+            transition: 0.3s transform ease-in-out        
+
+        &__list--active 
+            transform: translateX(101vw)
+            transition: 0.3s transform ease-in-out
+        
+        &__item 
+            margin-bottom: 30px
+        
+        .tel-item 
+            position: absolute
+            display: block
+            bottom: 36px
+        
+        .close-x 
+            position: absolute
+            top: 14px
+            left: 21px
+        
+        .nav__item.display-none 
+            display: block
+    
+
+    .hero 
+        padding: 32px 0 45px 0
+
+        &__container
+            grid-template-columns: repeat(4, 1fr)
+            grid-template-rows: minmax(422px, auto) minmax(240px, auto)
+            grid-auto-rows: minmax(105px, auto)
+            gap: 24px
+
+        &__grid-left        
+            grid-column: span 4
+            grid-row: span 1           
+
+        &__grid-right1
+            grid-column: span 4
+            grid-row: span 1
+
+        &__grid-right2
+            grid-column: span 2
+
+        &__grid-right3
+            grid-column: span 2
+
+    .left__span 
+        left: 180px
+        top: 6px
+        padding: 4px
+        font-size: 12px
+        line-height: 14px
+
+    .block
+        padding-bottom: 59px
+        &__titel, &__date  
+            max-width: 169px     
+            font-size: 24px
+
+        &__titel 
+            margin-bottom: 2px
+
+    .about        
+        font-size: 14px
+        line-height: 25px
+
+        &__wrapp        
+            gap: 20px
+
+        &__grid-left 
+            grid-column: span 4
+
+        &__form 
+            grid-column: span 4
+
+        &__subtitle 
+            margin-bottom: 6px
+
+    .form
+        &__img 
+            margin-bottom: 21px
+            
+        &__input 
+            padding: 12px 20px
+            width: 278px
+
+    .h3    
+        font-size: 18px
+
+    .projects         
+        padding-top: 38px
+        padding-bottom: 27px
+
+        &__list 
+            grid-template-columns: repeat(4, 1fr)
+            // grid-template-rows: 278px
+            grid-auto-rows: minmax(278px, auto)
+            gap: 26px            
+        
+        &__item 
+            grid-column: span 4        
+        
+        &__item:nth-child(3) 
+            grid-column: span 4
+        
+        .item-big 
+            grid-column: span 4
+            min-height: 422px
+        
+        .item-medium 
+            grid-column: span 4
+            min-height: 300px
+        
+        &__article-big 
+            padding: 199px 32px 218px 27px
+        
+        &__article-descr
+            margin-bottom: 16px 
+            width: 61%
+            font-size: 14px
+            line-height: 18px
+
+        &__article-descr2 
+            margin-bottom: 16px
+            font-size: 14px            
+            line-height: 20px
+
+        &__hashtag-big2 
+            top: -1px
+            right: 40px
+               
+        .project-photo-1
+            background-image: url(../resorces/img/project_semantics_320.jpg)
+
+        .project-photo-2
+            background-image: url(../resorces/img/project_oblivion_320.jpg)
+
+        &__img 
+            margin-bottom: 18px
+
+    .contacts 
+        padding-bottom: 46px
+
+        &__title-address 
+            display: inline-block
+            margin-bottom: 10px
+            font-size: 18px
+            line-height: 22px
+        
+        &__title 
+            margin-bottom: 12px
+    
+        &__wrapp 
+            grid-template-columns: 278px
+            grid-auto-flow: row           
+            gap: 3px
+            
+        &__map-wrapper         
+            grid-column: span 1
+
+        &__form 
+            grid-column: span 1           
+        
+        &__location 
+            margin-bottom: 11px
+            font-size: 14px
+            line-height: 18px        
+        
+        &__tel 
+            font-size: 14px
+            line-height: 18px
+        
+        &__address            
+            padding: 31px 0 12px 0
+            width: 100%  
+
+        &__close     
+            right: 1px 
+
+        &__form
+            padding-top: 27px
+
+        &__form-title 
+            font-size: 18px
+            line-height: 22px
+        
+        &__form-descr 
+            font-size: 14px
+            line-height: 18px
+
+        &__input,
+        &__text-area 
+            margin-bottom: 16px
+            padding: 15px 22px 10px 22px
+        
+        &__text-area 
+            padding-bottom: 23px
+
+    .footer 
+        position: relative
+        padding-bottom: 88px
+        background-color: $dark
+        padding-top: 31px
+        
+        &__container 
+            justify-content: center
+        
+        &__logo-wrapper 
+            position: absolute
+            bottom: 0
+            left: 0
+            right: 0
+            display: flex
+            flex-direction: column
+            align-items: center
+            margin-right: 0
+            padding-bottom: 12px
+            padding-top: 13px
+            background-color: $default-3
+            div 
+                font-size: 10px
+                line-height: 13px

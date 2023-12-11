@@ -1,0 +1,222 @@
+@import "./variables"
+@import "./optimization"
+
+.btn-secondary
+    transition: background-color 0.3s ease-in-out
+
+.btn-secondary:focus-visible 
+    outline: 0
+    background-color: $color-focus
+    transition: background-color 0.3s ease-in-out
+
+.btn-secondary:hover 
+    background-color: $color-btn
+    transition: background-color 0.3s ease-in-out
+
+.btn-secondary:active 
+    background-color: $color-active
+    border-color: $color-active
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out
+
+.btn-prim 
+    transition: background-color 0.3s ease-in-out
+
+.btn-prim:focus-visible 
+    outline: 3px solid $color-active
+    background-color: $color-btn
+    transition: background-color 0.3s ease-in-out, outline 0.3s ease-in-out
+
+.btn-prim:hover 
+    background-color: $color-focus
+    transition: background-color 0.3s ease-in-out
+
+.btn-prim:active 
+    background-color: $color-active
+    border-color: $color-active
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out
+
+.nav__link, .tel 
+    transition: color 0.3s ease-in-out
+
+.nav__link:focus-visible, .tel:focus-visible 
+    outline: 0
+    color: $default-1
+    background-color: $color-focus
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out
+
+.nav__link:hover, .tel:hover 
+    color: $color-btn
+    transition: color 0.3s ease-in-out
+
+.nav__link:active, .tel:active 
+    color: $color-active
+    background-color: inherit
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out
+
+.footer__link path , 
+.search path, 
+.close-x circle, 
+.btn-cls circle
+    fill: $default-2
+
+.footer__link:focus-visible path, 
+.search:focus-visible path, 
+.close-x:focus-visible circle, 
+.btn-cls:focus-visible circle
+    outline: 0
+    fill: $color-focus
+    transition: fill .3s ease-in-out
+
+.footer__link:focus-visible, 
+.search:focus-visible
+    outline: 0
+
+.footer__link:hover path, 
+.search:hover path, 
+.close-x:hover circle, 
+.btn-cls:hover circle
+    fill: $color-btn
+    transition: fill .3s ease-in-out
+
+
+.footer__link:active path, 
+.search:active path, 
+.close-x:active circle, 
+.btn-cls:active circle
+    fill: $color-active
+    transition: fill .3s ease-in-out
+
+
+.form__input::-webkit-input-placeholder, .contacts__input::-webkit-input-placeholder, .contacts__text-area::-webkit-input-placeholder
+    color: $default-1
+    -webkit-transition: color .3s ease-in-out
+    transition: color .3s ease-in-out
+
+
+.form__input::-moz-placeholder, .contacts__input::-moz-placeholder, .contacts__text-area::-moz-placeholder
+    color: $default-1
+    -moz-transition: color .3s ease-in-out
+    transition: color .3s ease-in-out
+
+
+.form__input:-ms-input-placeholder, .contacts__input:-ms-input-placeholder, .contacts__text-area:-ms-input-placeholder
+    color: $default-1
+    -ms-transition: color .3s ease-in-out
+    transition: color .3s ease-in-out
+
+
+.form__input::-ms-input-placeholder, .contacts__input::-ms-input-placeholder, .contacts__text-area::-ms-input-placeholder
+    color: $default-1
+    -ms-transition: color .3s ease-in-out
+    transition: color .3s ease-in-out
+
+
+.form__input::placeholder, 
+.contacts__input::placeholder,
+.contacts__text-area::placeholder
+    color: $default-1
+    transition: color .3s ease-in-out
+
+
+.form__input:hover::-webkit-input-placeholder, .contacts__input:hover::-webkit-input-placeholder, .contacts__text-area:hover::-webkit-input-placeholder
+    color: $color-btn
+    -webkit-transition: color .3s ease-in-out
+    transition: color .3s ease-in-out
+
+
+.form__input:hover::-moz-placeholder, .contacts__input:hover::-moz-placeholder, .contacts__text-area:hover::-moz-placeholder
+    color: $color-btn
+    -moz-transition: color .3s ease-in-out
+    transition: color .3s ease-in-out
+
+
+.form__input:hover:-ms-input-placeholder, .contacts__input:hover:-ms-input-placeholder, .contacts__text-area:hover:-ms-input-placeholder
+    color:$color-btn
+    -ms-transition: color .3s ease-in-out
+    transition: color .3s ease-in-out
+
+
+.form__input:hover::-ms-input-placeholder, .contacts__input:hover::-ms-input-placeholder, .contacts__text-area:hover::-ms-input-placeholder
+    color:$color-btn
+    -ms-transition: color .3s ease-in-out
+    transition: color .3s ease-in-out
+
+
+.form__input:hover::placeholder, 
+.contacts__input:hover::placeholder,
+.contacts__text-area:hover::placeholder
+    color:$color-btn
+    transition: color .3s ease-in-out
+
+
+.form__input:focus-visible::-webkit-input-placeholder, .contacts__input:focus-visible::-webkit-input-placeholder, .contacts__text-area:focus-visible::-webkit-input-placeholder 
+    outline: 0
+    color: $default-1
+    -webkit-transition: color .3s ease-in-out
+    transition: color .3s ease-in-out
+
+
+.form__input:focus-visible::-moz-placeholder, .contacts__input:focus-visible::-moz-placeholder, .contacts__text-area:focus-visible::-moz-placeholder
+    outline: 0 
+    color: $default-1
+    -moz-transition: color .3s ease-in-out
+    transition: color .3s ease-in-out
+
+
+.form__input:focus-visible:-ms-input-placeholder, .contacts__input:focus-visible:-ms-input-placeholder, .contacts__text-area:focus-visible:-ms-input-placeholder
+    outline: 0 
+    color: $default-1
+    -ms-transition: color .3s ease-in-out
+    transition: color .3s ease-in-out
+
+
+.form__input:focus-visible::-ms-input-placeholder, .contacts__input:focus-visible::-ms-input-placeholder, .contacts__text-area:focus-visible::-ms-input-placeholder
+    outline: 0 
+    color: $default-1
+    -ms-transition: color .3s ease-in-out
+    transition: color .3s ease-in-out
+
+
+.form__input:focus-visible::placeholder, 
+.contacts__input:focus-visible::placeholder,
+.contacts__text-area:focus-visible::placeholder
+    outline: 0 
+    color: $default-1
+    transition: color .3s ease-in-out
+
+
+.form__input:focus-visible, 
+.contacts__input:focus-visible,
+.contacts__text-area:focus-visible 
+    outline: 0
+    outline: 1px solid $color-btn
+    transition: outline .3s ease-in-out
+
+input.error 
+    outline: 1px solid $color-error !important
+
+
+.tel 
+    transition: color 0.3s ease-in-out
+
+
+.tel:hover 
+    color: $color-focus
+    transition: color 0.3s ease-in-out
+
+
+.tel:focus-visible 
+    color: $default-1
+    background-color: $color-focus
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out
+
+
+.tel:active 
+    color: $color-active
+    background-color: inherit
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out
+
+
+
+
+

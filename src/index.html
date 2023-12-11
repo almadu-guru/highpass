@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Pass. Фотостудия</title>
+    <link rel="preload" as="font" crossorigin href="./resorces/fonts/Roboto-Regular.woff2">
+    <link rel="preload" as="font" crossorigin href="./resorces/fonts/Roboto-Regular.woff">
+    <link rel="preload" as="font" crossorigin href="./resorces/fonts/Roboto-Bold.woff2">
+    <link rel="preload" as="font" crossorigin href="./resorces/fonts/Roboto-Bold.woff">
+    <link rel="preload" as="font" crossorigin href="./resorces/fonts/TTFirsNeue-Regular.woff2">
+    <link rel="preload" as="font" crossorigin href="./resorces/fonts/TTFirsNeue-Regular.woff">
+    <link rel="preload" as="font" crossorigin href="./resorces/fonts/TTFirsNeue-Bold.woff2">
+    <link rel="preload" as="font" crossorigin href="./resorces/fonts/TTFirsNeue-Bold.woff">
+    <link rel="shortcut icon" href="./resorces/img/favicon.svg" type="image/x-icon">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__container">
+          <div class="header__wrapp flex">
+            <picture class="header__logo">
+                <source srcset="./resorces/img/logo_320.png" media="(max-width: 768px)">
+                <source srcset="./resorces/img/logo_1024.png" media="(max-width: 1279px)">
+                <img src="./resorces/img/logo.png" alt="Логотип">
+            </picture>
+
+            <nav class="header__nav nav flex">
+              <button class="nav__burger burger btn-reset burger-open" aria-label="Открыть меню">
+                <span class="burger__line-1"></span>
+                <span class="burger__line-2"></span>
+                <span class="burger__line-3"></span>
+              </button>              
+              <ul class="nav__list flex list-reset">
+                  <li class="nav__item">
+                      <a href="#about" class="nav__link">О&nbsp;студии</a>
+                  </li>
+                  <li class="nav__item">
+                      <a href="#projects" class="nav__link">Наши проекты</a>
+                  </li>
+                  <li class="nav__item">
+                      <a href="#" class="nav__link">Услуги</a>
+                  </li>
+                  <li class="nav__item">
+                      <a href="#hero" class="nav__link">Мастер-классы</a>
+                  </li>
+                  <li class="nav__item">
+                      <a href="#contacts" class="nav__link">Контакты</a>
+                  </li>
+                  <li class="nav__item display-none tel-item">
+                    <a href="tel:+749542423532" class="nav__tel tel">
+                      <img src="./resorces/img/telephone.svg" alt="Телефон" class="tel__icon" />
+                      +7 495 424-23-532
+                    </a>
+                  </li>
+                  <li class="nav__item  display-none">
+                    <button class="close-x nav__close btn-reset" aria-label="Закрыть меню">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="10" />
+                        <rect x="6.20715" y="5.5" width="12" height="1" transform="rotate(45 6.20715 5.5)" fill="white" />
+                        <rect x="5.59143" y="13.9854" width="12" height="1" transform="rotate(-45 5.59143 13.9854)"
+                          fill="white" />
+                      </svg>
+                    </button>
+                  </li>
+              </ul>
+            </nav> 
+                       
+            <div class="header__search-wrapper">
+              <input class="header__search-input" type="text" placeholder="Что будем искать?"  aria-label="Что будем искать?">
+              <button class="header__search search btn-reset" aria-label="Открыть/закрыть поиск по сайту">
+                <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="header__btn-svg">
+                  <path
+                    d="M24.9113 22.8136L19.8536 18.3573C21.341 16.3763 22.1457 13.9543 22.1457 11.4068C22.1457 8.35737 20.9904 5.49807 18.9013 3.34219C16.8123 1.18631 14.0293 0 11.0728 0C8.11639 0 5.33342 1.19011 3.24434 3.34219C1.15157 5.49427 0 8.35737 0 11.4068C0 14.4524 1.15527 17.3193 3.24434 19.4714C5.33342 21.6273 8.1127 22.8136 11.0728 22.8136C13.5458 22.8136 15.8932 21.9847 17.8162 20.4562L22.8739 24.9086C22.902 24.9376 22.9354 24.9606 22.9721 24.9762C23.0088 24.9919 23.0482 25 23.088 25C23.1277 25 23.1671 24.9919 23.2038 24.9762C23.2406 24.9606 23.2739 24.9376 23.302 24.9086L24.9113 23.2546C24.9394 23.2257 24.9617 23.1913 24.9769 23.1535C24.9922 23.1156 25 23.0751 25 23.0341C25 22.9931 24.9922 22.9526 24.9769 22.9147C24.9617 22.8769 24.9394 22.8425 24.9113 22.8136ZM16.9193 17.4296C15.3543 19.0379 13.28 19.9238 11.0728 19.9238C8.86565 19.9238 6.79134 19.0379 5.22638 17.4296C3.66511 15.8174 2.80512 13.6805 2.80512 11.4068C2.80512 9.13303 3.66511 6.99236 5.22638 5.384C6.79134 3.77565 8.86565 2.88972 11.0728 2.88972C13.28 2.88972 15.358 3.77184 16.9193 5.384C18.4806 6.99616 19.3406 9.13303 19.3406 11.4068C19.3406 13.6805 18.4806 15.8212 16.9193 17.4296Z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero"  id="hero">
+            <div class="container hero__container grid">
+                <div class="hero__grid-left left">
+                    <span class="left__span">#мастеркласс</span>
+                    <div class="left__block block flex">
+                        <p class="block__span">Мастер-класс от&nbsp;Игоря Робова</p>
+                        <h1 class="block__titel">Неоновый фотосет 2.0</h1>
+                        <time class="block__date" datetime="2022-07-07 20:00">7 июля 20:00 </time>
+                        <button class="btn block__btn btn-reset btn-prim">Узнать больше</button>
+                    </div>
+                    <picture>
+                        <source srcset="./resorces/img/photo_camera_320.jpg" media="(max-width: 767px)">
+                        <source srcset="./resorces/img/photo_camera_768.jpg" media="(max-width: 1023px)">
+                        <source srcset="./resorces/img/photo_camera_1024.jpg" media="(max-width: 1279px)">
+                        <img src="./resorces/img/photo_camera.jpg" alt="Фотокамера">
+                    </picture>
+                </div>
+                <div class="hero__grid-right1">
+                    <h2 class="hero__subtitle subtitle">
+                        Работы участников предыдущего мастер-класса
+                    </h2>                   
+                    <picture>
+                        <source srcset="./resorces/img/girl1_320.jpg" media="(max-width: 767px)">
+                        <source srcset="./resorces/img/girl1_768.jpg" media="(max-width: 1023px)">
+                        <source srcset="./resorces/img/girl1_1024.jpg" media="(max-width: 1279px)">
+                        <img src="./resorces/img/girl1.jpg" alt="Девушка">
+                    </picture>
+                </div>
+                <div class="hero__grid-right2">
+                    <picture>
+                        <source srcset="./resorces/img/girl2_320.jpg" media="(max-width: 767px)">
+                        <source srcset="./resorces/img/girl2_768.jpg" media="(max-width: 1023px)">
+                        <source srcset="./resorces/img/girl2_1024.jpg" media="(max-width: 1279px)">
+                        <img src="./resorces/img/girl2.jpg" alt="Девушка">
+                    </picture>
+                </div>                     
+                <div class="hero__grid-right3">
+                    <picture>
+                        <source srcset="./resorces/img/girl3_320.jpg" media="(max-width: 767px)">
+                        <source srcset="./resorces/img/girl3_768.jpg" media="(max-width: 1023px)">
+                        <source srcset="./resorces/img/girl3_1024.jpg" media="(max-width: 1279)">
+                        <img src="./resorces/img/girl3.jpg" alt="Девушка">
+                    </picture>
+                </div>  
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container about__container">
+                <h2 class="about__subtitle subtitle">
+                  О&nbsp;студии
+                </h2>
+                <div class="about__wrapp grid">
+                  <div class="about__grid-left">
+                    В&nbsp;рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно
+                    синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны:
+                    высокотехнологичная концепция общественного уклада требует от&nbsp;нас анализа соответствующих условий
+                    активизации! Следует отметить, что семантический разбор внешних противодействий фиксирует необходимость
+                    распределения внутренних резервов и&nbsp;ресурсов. Безусловно, граница обучения кадров предоставляет широкие
+                    возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения
+                    предполагает независимые способы реализации новых принципов формирования материально-технической
+                    и&nbsp;кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только
+                    методом политического участия и&nbsp;нарушающими общечеловеческие нормы этики.
+                  </div>
+                  <form class="about__form form">
+                    <picture class="form__img">
+                        <source srcset="./resorces/img/photo_camera_atelier_320.jpg" media="(max-width: 767px)">
+                        <source srcset="./resorces/img/photo_camera_atelier_768.jpg" media="(max-width: 1023px)">
+                        <source srcset="./resorces/img/photo_camera_atelier_1024.jpg" media="(max-width: 1279px)">
+                        <img src="./resorces/img/photo_camera_atelier.jpg" alt="Фотокамера">
+                    </picture>
+                    <h3 class="form__h3 h3">Подписаться на рассылку</h3>
+                    <div class="form__wrapp flex">
+                        <input type="email" class="form__input" placeholder="E-mail" aria-label="Введите ваш e-mail">                      
+                        <button class="form__btn btn btn-reset btn-prim" type="submit" aria-label="Отправить почту для подписки на рассылку">
+                        Отправить</button>
+                    </div>             
+                </form>
+                </div>
+              </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <div class="container projects__container">
+              <h2 class="subtitle projects__subtitle">
+                Наши проекты
+              </h2>
+              <ul class="projects__list grid list-reset">
+                <li class="projects__item">
+                  <article class="projects__article-small flex">
+                    <div class="hashtag projects__hashtag">#пейзаж</div>
+                    <picture class="projects__img">
+                        <source srcset="./resorces/img/project_landscape_320.jpg" media="(max-width: 767px)">
+                        <source srcset="./resorces/img/project_landscape_768.jpg" media="(max-width: 1023px)">
+                        <source srcset="./resorces/img/project_landscape_1024.jpg" media="(max-width: 1279px)">
+                        <img src="./resorces/img/project_landscape.jpg" alt="Пейзаж">
+                    </picture>
+                    <h4 class="projects__article-title">
+                      Синтетически, смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени...
+                    </h4>
+                    <span class="projects__date">
+                      16&nbsp;июня
+                    </span>
+                  </article>
+                </li>
+                <li class="projects__item">
+                  <article class="projects__article-small flex">
+                    <div class="hashtag projects__hashtag">#портрет</div>
+                    <picture class="projects__img">
+                        <source srcset="./resorces/img/project_portrait_320.jpg" media="(max-width: 767px)">
+                        <source srcset="./resorces/img/project_portrait_768.jpg" media="(max-width: 1023px)">
+                        <source srcset="./resorces/img/project_portrait_1024.jpg" media="(max-width: 1279px)">
+                        <img src="./resorces/img/project_portrait.jpg" alt="Портрет">
+                    </picture>
+                    <h4 class="projects__article-title">
+                      В своём стремлении улучшить опыт мы упускаем, что явные...
+                    </h4>
+                    <span class="projects__date">
+                      28&nbsp;мая
+                    </span>
+                  </article>
+                </li>
+                <li class="projects__item">
+                  <article class="projects__article-small flex">
+                    <div class="hashtag projects__hashtag">#предмет</div>
+                    <picture class="projects__img">
+                        <source srcset="./resorces/img/project_object_320.jpg" media="(max-width: 767px)">
+                        <source srcset="./resorces/img/project_object_768.jpg" media="(max-width: 1023px)">
+                        <source srcset="./resorces/img/project_object_1024.jpg" media="(max-width: 1279px)">
+                        <img src="./resorces/img/project_object.jpg" alt="Предмет">
+                    </picture>
+                    <h4 class="projects__article-title">
+                      Равным образом, высокое качество позиционных...
+                    </h4>
+                    <span class="projects__date">
+                      14&nbsp;мая
+                    </span>
+                  </article>
+                </li>
+                <li class="projects__item item-big">
+                  <article class="projects__article-big project-photo-1 flex">
+                    <div class="hashtag projects__hashtag-big1">#fuji</div>                   
+                    <div class="projects__wrapp ">
+                      <span class="projects__date projects__date-fix">
+                        9&nbsp;апреля
+                      </span>
+                      <h2 class="projects__subtitle projects__subtitle-big">
+                        Cемантический <br> разбор
+                      </h2>
+                      <p class="projects__article-descr">
+                        В&nbsp;рамках спецификации современных стандартов, интерактивные прототипы
+                      </p>
+                      <button class="projects__btn btn-reset btn-secondary" aria-label="Узнать больше о проекте">
+                        О&nbsp;проекте
+                      </button>
+                    </div>                   
+                  </article>
+                </li>
+                <li class="projects__item item-big">
+                  <article class="projects__article-big project-photo-2 flex">
+                    <div class="hashtag projects__hashtag-big2">#проектзабвение</div>
+                    <div class="projects__wrapp ">
+                      <span class="projects__date projects__date-fix">
+                        20&nbsp;марта
+                      </span>
+                      <h2 class="projects__subtitle projects__subtitle-big">
+                        Забвение
+                      </h2>
+                      <p class="projects__article-descr2">
+                        Играет важную роль в&nbsp;формировании глубокомысленных рассуждений
+                      </p>
+                      <button class="projects__btn btn-reset btn-secondary" aria-label="Узнать больше о проекте">
+                        О&nbsp;проекте
+                      </button>
+                    </div>                   
+                  </article>
+                </li>
+                <li class="projects__item item-medium">
+                  <article class="projects__article-small">
+                    <div class="hashtag projects__hashtag">#ретушь</div>
+                    <picture class="projects__img-medium">
+                        <source srcset="./resorces/img/project_retouch_320.jpg" media="(max-width: 767px)">
+                        <source srcset="./resorces/img/project_retouch_1024.jpg" media="(max-width: 1279px)">
+                        <img src="./resorces/img/project_retouch.jpg" alt="Ретушь">
+                    </picture>
+                    <h4 class="projects__article-title-medium">
+                      Как принято считать, многие известные личности и&nbsp;по&nbsp;сей день остаются уделом либералов...
+                    </h4>
+                    <span class="projects__date">
+                      9&nbsp;марта
+                    </span>
+                  </article>
+                </li>
+                <li class="projects__item item-medium">
+                  <article class="projects__article-small">
+                    <div class="hashtag projects__hashtag">#портрет</div>
+                    <picture class="projects__img-medium">
+                        <source srcset="./resorces/img/project_girl_320.jpg" media="(max-width: 767px)">
+                        <source srcset="./resorces/img/project_girl_1024.jpg" media="(max-width: 1279px)">
+                        <img src="./resorces/img/project_girl.jpg" alt="Портрет">
+                    </picture>
+                    <h4 class="projects__article-title-medium">
+                      С&nbsp;учётом сложившейся международной обстановки, новая модель организационной...
+                    </h4>
+                    <span class="projects__date">
+                      1&nbsp;марта
+                    </span>
+                  </article>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+        <section class="contacts" id="contacts">          
+            <div class="container contacts__container">
+              <h2 class="subtitle contacts__subtitle">Контакты</h2>
+              <div class="contacts__wrapp grid">
+                <div class="contacts__map-wrapper">
+                  <div class="map" id="map" style="width: 100%; height: 460px"></div>
+                  <address class="contacts__address" id="map-adress">
+                    <button class="contacts__close btn-reset close-x map-btn" aria-label="Закрыть информацию об адресе">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="10" />
+                        <rect x="6.20715" y="5.5" width="12" height="1" transform="rotate(45 6.20715 5.5)" fill="white" />
+                        <rect x="5.59143" y="13.9854" width="12" height="1" transform="rotate(-45 5.59143 13.9854)"
+                          fill="white" />
+                      </svg>
+                    </button>
+                    <span class="contacts__title-address">
+                      Студия «High pass»
+                    </span>
+                    <span class="contacts__location">
+                      107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис № 82
+                    </span>
+                    <a href="tel:+749542423532" class="contacts__tel tel"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M14.675 10.8167C13.65 10.8167 12.6583 10.65 11.7333 10.35C11.4417 10.25 11.1167 10.325 10.8917 10.55L9.58333 12.1917C7.225 11.0667 5.01667 8.94167 3.84167 6.5L5.46667 5.11667C5.69167 4.88333 5.75833 4.55833 5.66667 4.26667C5.35833 3.34167 5.2 2.35 5.2 1.325C5.2 0.875 4.825 0.5 4.375 0.5H1.49167C1.04167 0.5 0.5 0.7 0.5 1.325C0.5 9.06667 6.94167 15.5 14.675 15.5C15.2667 15.5 15.5 14.975 15.5 14.5167V11.6417C15.5 11.1917 15.125 10.8167 14.675 10.8167Z" fill="#FF6E30"></path>
+                    </svg>
+                    +7 495 424-23-532</a>
+                  </address>                  
+                </div>              
+                <form class="contacts__form">
+                  <h3 class="contacts__form-title">Оставить заявку</h3>
+                  <p class="contacts__form-descr">
+                    Оставьте ваши данные, указав в&nbsp;графе &laquo;Комментарий&raquo; желаемые время и&nbsp;дату съёмки или
+                    другого мероприятия
+                  </p>
+                  <div class="contacts__input-wrapper wrapper-for-input-error">
+                    <input type="text" name="name" placeholder="Имя" class="contacts__input" data-text="true">
+                  </div>
+                  <div class="contacts__input-wrapper wrapper-for-input-error">
+                    <input type="text" name="mail" placeholder="Email" data-email="true" class="contacts__input">
+                  </div>
+                  <textarea name="post" cols="30" rows="6" class="contacts__text-area" placeholder="Комментарий"></textarea>
+                  <button class="contacts__form-btn btn btn-reset btn-prim" aria-label="Отправить заявку">Отправить</button>
+                </form>
+              </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+      <div class="container footer__container flex">
+        <div class="footer__logo-wrapper">
+          <picture>
+           <source srcset="./resorces/img/logo_320.png" media="(max-width: 767px)">
+            <source srcset="./resorces/img/logo_1024.png" media="(max-width: 1279px)">
+            <img src="./resorces/img/logo.png" alt="Логотип">
+          </picture>
+          <div>
+            Фотостудия High pass<sup class="reg">&reg;</sup> 2018&ndash;2020
+          </div>
+        </div>
+        <div class="footer__descr">
+          Которая из&nbsp;моих фотографий самая любимая? Та, которую я&nbsp;собираюсь снять завтра.
+          &copy;&nbsp;Имоджен Каннингем
+        </div>
+        <div class="footer__soc flex">
+          <span class="footer__soc-text">
+            Больше интересного:
+          </span>
+          <ul class="footer__list flex list-reset">
+            <li class="footer__item">
+              <a href="https://ok.ru" class="footer__link" target="_blank">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_41399_288)">
+                  <path d="M12.8527 9.99062C12.8527 11.2273 13.8552 12.2299 15.0919 12.2299C16.3286 12.2299 17.3311 11.2273 17.3311 9.99062C17.3311 8.75396 16.3286 7.7514 15.0919 7.7514C13.8552 7.7514 12.8527 8.75396 12.8527 9.99062Z" fill="#CACACA"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71572 0 0 6.71573 0 15C0 23.2843 6.71572 30 15 30ZM9.67501 9.99055C9.67501 6.99892 12.1002 4.57364 15.0919 4.57364C18.0836 4.57364 20.5088 6.99892 20.5088 9.99055C20.5088 12.9822 18.0836 15.4077 15.0919 15.4077C12.1002 15.4077 9.67501 12.9822 9.67501 9.99055ZM20.5412 18.194C20.4724 18.2491 19.1729 19.2761 17.0043 19.7179L20.2777 22.9622C20.8534 23.5369 20.854 24.4695 20.2793 25.0451C19.7046 25.6207 18.7722 25.6216 18.1964 25.0467L15.0184 21.952L12.1319 25.0268C11.8429 25.3266 11.4575 25.4774 11.0716 25.4774C10.7035 25.4774 10.3351 25.3404 10.0493 25.0648C9.46372 24.5001 9.44677 23.5677 10.0114 22.9822L13.1185 19.735C10.8891 19.3036 9.53591 18.2499 9.46622 18.194C8.83165 17.6851 8.72971 16.7581 9.23862 16.1235C9.74746 15.4889 10.6744 15.387 11.3091 15.8958C11.3225 15.9067 12.7378 16.9699 15.0183 16.9715C17.2989 16.9699 18.6849 15.9067 18.6983 15.8958C19.333 15.387 20.2599 15.4889 20.7688 16.1235C21.2777 16.7581 21.1757 17.6851 20.5412 18.194Z" fill="#CACACA"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_41399_288">
+                  <rect width="30" height="30" fill="white" transform="matrix(-1 0 0 1 30 0)"/>
+                  </clipPath>
+                  </defs>
+                  </svg>
+              </a>
+            </li>
+            <li class="footer__item">
+              <a href="https://vk.com" class="footer__link" target="_blank">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 0C6.71601 0 0 6.7157 0 15C0 23.2843 6.71601 30 15 30C23.284 30 30 23.2843 30 15C30 6.7157 23.284 0 15 0ZM22.6088 16.6223C23.3079 17.3052 24.0476 17.9478 24.6752 18.7013C24.9533 19.0346 25.2154 19.3792 25.4148 19.7669C25.6996 20.3196 25.4425 20.9257 24.9477 20.9586L21.8747 20.958C21.081 21.0236 20.4494 20.7035 19.9169 20.1609C19.4919 19.7285 19.0975 19.2666 18.6881 18.8194C18.5208 18.6359 18.3447 18.4631 18.1347 18.3272C17.7158 18.0546 17.3518 18.1381 17.1118 18.5758C16.8672 19.0211 16.8114 19.5146 16.788 20.0102C16.7546 20.7348 16.5361 20.9242 15.809 20.9583C14.2555 21.031 12.7814 20.7953 11.4114 20.0121C10.2028 19.3212 9.26732 18.3462 8.45218 17.2423C6.86486 15.0902 5.64921 12.7283 4.55693 10.2985C4.3111 9.7513 4.49095 9.45852 5.09463 9.44716C6.0976 9.42783 7.10056 9.43028 8.10353 9.44624C8.51172 9.45268 8.78179 9.68624 8.93862 10.0714C9.48062 11.4049 10.1451 12.6737 10.9777 13.8503C11.1996 14.1637 11.4261 14.4761 11.7486 14.6974C12.1047 14.9417 12.376 14.861 12.5438 14.4635C12.6513 14.2109 12.6976 13.9409 12.7209 13.6702C12.8007 12.743 12.8102 11.8162 12.6721 10.8927C12.5862 10.3148 12.2612 9.94158 11.6851 9.83233C11.3917 9.77678 11.4347 9.66813 11.5774 9.50056C11.8251 9.21084 12.0571 9.03161 12.5208 9.03161L15.9928 9.031C16.5401 9.13841 16.6628 9.38394 16.7371 9.93514L16.7402 13.7936C16.7337 14.0069 16.8473 14.6391 17.2303 14.7787C17.5372 14.88 17.7398 14.6339 17.9233 14.4396C18.7559 13.556 19.3492 12.5131 19.8804 11.4338C20.1149 10.9577 20.3171 10.4652 20.5136 9.97166C20.6596 9.60675 20.8868 9.42721 21.2986 9.43335L24.6421 9.43734C24.7406 9.43734 24.8406 9.43826 24.9382 9.45514C25.5017 9.55151 25.6561 9.79396 25.4817 10.3436C25.2074 11.2073 24.6743 11.9266 24.1532 12.6479C23.5946 13.4201 22.9989 14.1652 22.4458 14.9408C21.9376 15.6497 21.9778 16.0066 22.6088 16.6223Z" fill="#CACACA"/>
+                  </svg>                  
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div class="modal display-none ">
+      <div class="modal__window">
+        <button class="modal__close btn-reset close-x" aria-label="Закрыть модально окно">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="15" cy="15" r="15" fill="#999999"></circle>
+            <rect x="6.20715" y="4.5" width="25" height="3" transform="rotate(45 6.20715 5.5)" fill="white"></rect>
+            <rect x="0" y="19.9854" width="25" height="3" transform="rotate(-45 5.59143 13.9854)" fill="white"></rect>
+          </svg>
+        </button>
+        <h3 class="modal__text title">
+          Спасибо за ваше сообщение! Мы скоро свяжемся с вами!
+        </h3>
+      </div>
+    </div>
+</body>
+</html>
+
+<script type="module" src="./js/main.js"></script>
+<script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+<script type="text/javascript" >
+  function validate(el, message, valFunc) {
+    if (!valFunc(el.value)) {
+      el.classList.add('error');
+      if (el.parentElement.children.length === 1) {
+        const errorEl = document.createElement('span');
+        errorEl.classList.add('error-input');
+        errorEl.textContent = message;
+        el.parentElement.append(errorEl);
+      }
+      return false;
+    } else {
+      el.classList.remove('error');
+      if (el.parentElement.children.length > 1) {
+        el.parentElement.querySelector('.error-input').remove();
+      }
+      return true;
+    }
+  }
+
+  function validateInput() {
+    document.querySelectorAll('input[data-email=true]').forEach((el) => {
+      el.addEventListener('input', (e) => {
+        validate(e.currentTarget, 'Некорректный формат почты', validator.isEmail);
+      });
+    });
+
+    document.querySelectorAll('input[data-text=true]').forEach((el) => {
+      el.addEventListener('input', (e) => {
+        validate(e.currentTarget, 'Незаполненное поле!', (val) => {
+          return val.length > 0;
+        });
+      });
+    });
+  }
+
+  function openModal() {
+    document.querySelector('.modal').classList.add('modal--close');
+    document.querySelector('.modal').classList.add('modal--active');
+    document.body.classList.add('stop-scroll');
+  }
+
+  function listnerOnModal() {
+    document.querySelector('.modal__close').addEventListener('click', () => {
+      document.querySelector('.modal').classList.remove('modal--active');
+      document.body.classList.remove('stop-scroll');
+    });
+
+    document.querySelector('.modal').addEventListener('click', (e) => {
+      if (e.isNotWrapper) return;
+      document.querySelector('.modal').classList.remove('modal--active');
+      document.body.classList.remove('stop-scroll');
+    });
+
+    document.querySelector('.modal__window').addEventListener('click', (e) => {
+      e.isNotWrapper = true;
+    });
+  }
+
+  function validateBeforeSubmitForm() {
+    document.querySelectorAll('form').forEach((el) => {
+      el.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let val = [];
+        el.querySelectorAll('input').forEach((el) => {
+          if (el.classList.contains('error')) {
+            val.push(false);
+          } else {
+            const v = validate(el, 'Незаполненное поле!', (val) => {
+              return val.length > 0;
+            });
+            val.push(v);
+          }
+        });
+        if (!val.includes(false)) {
+          el.querySelectorAll('input').forEach((el) => {
+            el.value = '';
+          });
+          el.querySelectorAll('textarea').forEach((el) => {
+            el.value = '';
+          });
+          openModal();
+        }
+      });
+    });
+  }
+  validateInput();
+  listnerOnModal();
+  validateBeforeSubmitForm();
+</script>
